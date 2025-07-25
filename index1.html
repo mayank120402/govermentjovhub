@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सरकारी नौकरियाँ - GovtJobsHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="stylyl1.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo">GovtJobsHub</a>
+            
+            <!-- Language Translator Button - Moved right after logo -->
+            <div class="language-switcher">
+                <button class="language-btn" id="languageBtn">
+                    <i class="fas fa-language"></i> हिंदी <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="language-dropdown" id="languageDropdown">
+                    <a href="#" data-lang="hi">हिंदी</a>
+                    <a href="#" data-lang="en">English</a>
+                    <a href="#" data-lang="mr">मराठी</a>
+                    <a href="#" data-lang="bn">বাংলা</a>
+                    <a href="#" data-lang="ta">தமிழ்</a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active"><i class="fas fa-home"></i> होम</a>
+                </li>
+                <li class="nav-item">
+                    <a href="result.html" class="nav-link"><i class="fas fa-poll"></i> परिणाम</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admit-card.html" class="nav-link"><i class="fas fa-id-card"></i> एडमिट कार्ड</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>सरकारी नौकरियाँ</h1>
+            <p>भारत सरकार और राज्य सरकार की नवीनतम भर्तियाँ</p>
+            
+            <div class="theme-toggle">
+                <span><i class="fas fa-sun"></i></span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="themeToggle">
+                    <span class="slider"></span>
+                </label>
+                <span><i class="fas fa-moon"></i></span>
+            </div>
+        </header>
+        
+        <div class="search-box">
+            <input type="text" placeholder="नौकरी, विभाग या कीवर्ड खोजें..." id="searchInput">
+        </div>
+        
+        <div class="filter-options">
+            <button class="filter-btn active" data-filter="all">सभी</button>
+            <button class="filter-btn" data-filter="central">केंद्र सरकार</button>
+            <button class="filter-btn" data-filter="state">राज्य सरकार की नौकरियाँ</button>
+            <button class="filter-btn" data-filter="bank">बैंकिंग</button>
+            <button class="filter-btn" data-filter="defense">रक्षा</button>
+            <button class="filter-btn" data-filter="railway">रेलवे</button>
+            <button class="filter-btn" data-filter="ssc">SSC</button>
+            <button class="filter-btn" data-filter="upsc">UPSC</button>
+        </div>
+        
+        <div class="job-list" id="jobList">
+            <!-- केंद्र सरकार की नौकरियाँ डायनामिकली जेनरेट होंगी -->
+        </div>
+        
+        <!-- राज्य सरकार की नौकरियों का विशेष सेक्शन -->
+        <div class="state-jobs-section">
+            <div class="state-jobs-header">
+                <h2>राज्य सरकार की नौकरियाँ</h2>
+<div class="state-filter">
+    <button class="state-btn active" data-state="all">सभी राज्य/केंद्र शासित प्रदेश</button>
+    
+    <!-- राज्य -->
+    <button class="state-btn" data-state="an">अंडमान और निकोबार द्वीप समूह</button>
+    <button class="state-btn" data-state="ap">आंध्र प्रदेश</button>
+    <button class="state-btn" data-state="ar">अरुणाचल प्रदेश</button>
+    <button class="state-btn" data-state="as">असम</button>
+    <button class="state-btn" data-state="br">बिहार</button>
+    <button class="state-btn" data-state="ch">चंडीगढ़</button>
+    <button class="state-btn" data-state="ct">छत्तीसगढ़</button>
+    <button class="state-btn" data-state="dn">दादरा और नगर हवेली</button>
+    <button class="state-btn" data-state="dd">दमन और दीव</button>
+    <button class="state-btn" data-state="dl">दिल्ली</button>
+    <button class="state-btn" data-state="ga">गोवा</button>
+    <button class="state-btn" data-state="gj">गुजरात</button>
+    <button class="state-btn" data-state="hr">हरियाणा</button>
+    <button class="state-btn" data-state="hp">हिमाचल प्रदेश</button>
+    <button class="state-btn" data-state="jk">जम्मू और कश्मीर</button>
+    <button class="state-btn" data-state="jh">झारखंड</button>
+    <button class="state-btn" data-state="ka">कर्नाटक</button>
+    <button class="state-btn" data-state="kl">केरल</button>
+    <button class="state-btn" data-state="ld">लक्षद्वीप</button>
+    <button class="state-btn" data-state="mp">मध्य प्रदेश</button>
+    <button class="state-btn" data-state="mh">महाराष्ट्र</button>
+    <button class="state-btn" data-state="mn">मणिपुर</button>
+    <button class="state-btn" data-state="ml">मेघालय</button>
+    <button class="state-btn" data-state="mz">मिजोरम</button>
+    <button class="state-btn" data-state="nl">नगालैंड</button>
+    <button class="state-btn" data-state="or">ओडिशा</button>
+    <button class="state-btn" data-state="py">पुडुचेरी</button>
+    <button class="state-btn" data-state="pb">पंजाब</button>
+    <button class="state-btn" data-state="rj">राजस्थान</button>
+    <button class="state-btn" data-state="sk">सिक्किम</button>
+    <button class="state-btn" data-state="tn">तमिलनाडु</button>
+    <button class="state-btn" data-state="tg">तेलंगाना</button>
+    <button class="state-btn" data-state="tr">त्रिपुरा</button>
+    <button class="state-btn" data-state="up">उत्तर प्रदेश</button>
+    <button class="state-btn" data-state="uk">उत्तराखंड</button>
+    <button class="state-btn" data-state="wb">पश्चिम बंगाल</button>
+</div>
+            </div>
+            
+            <div class="job-list" id="stateJobList">
+                <!-- राज्य नौकरियाँ डायनामिकली जेनरेट होंगी -->
+            </div>
+        </div>
+        
+        <div class="pagination">
+            <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+        
+        <footer>
+            <p>© <span id="year"></span> GovtJobsHub - सभी अधिकार सुरक्षित</p>
+        </footer>
+    </div>
+
+    <script src="gs/script.js"></script>
+</body>
+</html>

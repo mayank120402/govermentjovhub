@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>एडमिट कार्ड - GovtJobsHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --secondary: #e74c3c;
+            --light: #f8f9f9;
+            --dark: #17202a;
+            --bg: #f2f3f4;
+            --text: #333;
+            --card-bg: white;
+        }
+        
+        [data-theme="dark"] {
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --light: #2c3e50;
+            --dark: #ecf0f1;
+            --bg: #1a1a1a;
+            --text: #f8f9f9;
+            --card-bg: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        /* Table Styles */
+        .admit-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .admit-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        .admit-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .admit-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .admit-table tr:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: var(--dark);
+        }
+        
+        .state-name {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .search-box {
+            margin: 20px 0;
+        }
+        
+        .search-box input {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 1rem;
+            background-color: var(--card-bg);
+            color: var(--text);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            .nav-menu.show {
+                display: flex;
+            }
+            
+            .admit-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo">GovtJobsHub</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+                </li>
+                <li class="nav-item">
+                    <a href="results.html" class="nav-link"><i class="fas fa-poll"></i> परिणाम</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admit-card.html" class="nav-link active"><i class="fas fa-id-card"></i> एडमिट कार्ड</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>एडमिट कार्ड</h1>
+            <p>सभी सरकारी परीक्षाओं के एडमिट कार्ड</p>
+        </header>
+        
+        <div class="search-box">
+            <input type="text" placeholder="परीक्षा का नाम, विभाग या राज्य खोजें..." id="searchInput">
+        </div>
+        
+        <h2>केंद्र सरकारी परीक्षाएं</h2>
+        <table class="admit-table" id="centralAdmitCards">
+            <thead>
+                <tr>
+                    <th>परीक्षा का नाम</th>
+                    <th>विभाग</th>
+                    <th>एडमिट कार्ड जारी</th>
+                    <th>परीक्षा तिथि</th>
+                    <th>कार्यवाही</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Central government admit cards will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <h2>राज्य सरकारी परीक्षाएं</h2>
+        <table class="admit-table" id="stateAdmitCards">
+            <thead>
+                <tr>
+                    <th>राज्य</th>
+                    <th>परीक्षा का नाम</th>
+                    <th>एडमिट कार्ड जारी</th>
+                    <th>परीक्षा तिथि</th>
+                    <th>कार्यवाही</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- State government admit cards will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <footer>
+            <p>© <span id="year"></span> GovtJobsHub - सभी अधिकार सुरक्षित</p>
+        </footer>
+    </div>
+
+    <script>
+        // Central Government Admit Cards Data
+        const centralAdmitCards = [
+            {
+                examName: "SSC CGL 2024",
+                department: "Staff Selection Commission",
+                admitCardDate: "10 मार्च 2024",
+                examDate: "15 अप्रैल 2024",
+                link: "ssc-cgl-admit.html"
+            },
+            {
+                examName: "IBPS PO XIII",
+                department: "Institute of Banking Personnel Selection",
+                admitCardDate: "05 मार्च 2024",
+                examDate: "20 मार्च 2024",
+                link: "ibps-po-admit.html"
+            },
+            {
+                examName: "UPSC Civil Services 2024",
+                department: "Union Public Service Commission",
+                admitCardDate: "15 मार्च 2024",
+                examDate: "26 मई 2024",
+                link: "upsc-cse-admit.html"
+            },
+            {
+                examName: "RRB NTPC 2024",
+                department: "रेलवे भर्ती बोर्ड",
+                admitCardDate: "01 मार्च 2024",
+                examDate: "10 अप्रैल 2024",
+                link: "rrb-ntpc-admit.html"
+            },
+            {
+                examName: "SBI Clerk 2024",
+                department: "State Bank of India",
+                admitCardDate: "25 फरवरी 2024",
+                examDate: "05 अप्रैल 2024",
+                link: "sbi-clerk-admit.html"
+            },
+            {
+                examName: "SSC GD Constable 2024",
+                department: "Staff Selection Commission",
+                admitCardDate: "20 फरवरी 2024",
+                examDate: "15 मार्च 2024",
+                link: "ssc-gd-admit.html"
+            }
+        ];
+
+        // State Government Admit Cards Data
+        const stateAdmitCards = [
+            {
+                state: "उत्तर प्रदेश",
+                examName: "UP Police Constable 2024",
+                admitCardDate: "05 मार्च 2024",
+                examDate: "25 मार्च 2024",
+                link: "up-police-admit.html"
+            },
+            {
+                state: "मध्य प्रदेश",
+                examName: "MP Police Constable 2024",
+                admitCardDate: "10 मार्च 2024",
+                examDate: "30 मार्च 2024",
+                link: "mp-police-admit.html"
+            },
+            {
+                state: "बिहार",
+                examName: "BPSC Teacher 2024",
+                admitCardDate: "15 फरवरी 2024",
+                examDate: "10 मार्च 2024",
+                link: "bihar-teacher-admit.html"
+            },
+            {
+                state: "राजस्थान",
+                examName: "Rajasthan PTET 2024",
+                admitCardDate: "01 मार्च 2024",
+                examDate: "20 अप्रैल 2024",
+                link: "rajasthan-ptet-admit.html"
+            },
+            {
+                state: "महाराष्ट्र",
+                examName: "MAHA TAIT 2024",
+                admitCardDate: "25 फरवरी 2024",
+                examDate: "15 मार्च 2024",
+                link: "maha-tait-admit.html"
+            },
+            {
+                state: "पश्चिम बंगाल",
+                examName: "WBPSC Clerkship 2024",
+                admitCardDate: "12 मार्च 2024",
+                examDate: "05 अप्रैल 2024",
+                link: "wb-clerk-admit.html"
+            },
+            {
+                state: "तमिलनाडु",
+                examName: "TNPSC Group 4 2024",
+                admitCardDate: "20 फरवरी 2024",
+                examDate: "10 मार्च 2024",
+                link: "tnpsc-group4-admit.html"
+            },
+            {
+                state: "गुजरात",
+                examName: "GPSC Class 1-2 2024",
+                admitCardDate: "05 मार्च 2024",
+                examDate: "25 मार्च 2024",
+                link: "gpsc-admit.html"
+            },
+            {
+                state: "कर्नाटक",
+                examName: "Karnataka PSC 2024",
+                admitCardDate: "15 मार्च 2024",
+                examDate: "05 अप्रैल 2024",
+                link: "kpsc-admit.html"
+            },
+            {
+                state: "तेलंगाना",
+                examName: "TSPSC Group 2 2024",
+                admitCardDate: "10 मार्च 2024",
+                examDate: "30 मार्च 2024",
+                link: "tspsc-admit.html"
+            }
+        ];
+
+        // Function to populate central admit cards table
+        function populateCentralAdmitCards() {
+            const tbody = document.querySelector('#centralAdmitCards tbody');
+            tbody.innerHTML = '';
+            
+            centralAdmitCards.forEach(card => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${card.examName}</td>
+                    <td>${card.department}</td>
+                    <td>${card.admitCardDate}</td>
+                    <td>${card.examDate}</td>
+                    <td><a href="${card.link}" class="download-btn">डाउनलोड करें</a></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Function to populate state admit cards table
+        function populateStateAdmitCards() {
+            const tbody = document.querySelector('#stateAdmitCards tbody');
+            tbody.innerHTML = '';
+            
+            stateAdmitCards.forEach(card => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="state-name">${card.state}</td>
+                    <td>${card.examName}</td>
+                    <td>${card.admitCardDate}</td>
+                    <td>${card.examDate}</td>
+                    <td><a href="${card.link}" class="download-btn">डाउनलोड करें</a></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            // Search in central admit cards
+            document.querySelectorAll('#centralAdmitCards tbody tr').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+            
+            // Search in state admit cards
+            document.querySelectorAll('#stateAdmitCards tbody tr').forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            populateCentralAdmitCards();
+            populateStateAdmitCards();
+        });
+    </script>
+</body>
+</html>

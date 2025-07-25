@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBPS SO Recruitment 2024 | GovtJobsHub</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --accent: #3498db;
+            --success: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .notification-badge {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--accent);
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: var(--dark);
+            margin: 15px 0;
+            font-size: 1.4rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 10px 12px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 5px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #c0392b;
+        }
+        
+        .btn-success {
+            background-color: var(--success);
+        }
+        
+        .btn-success:hover {
+            background-color: #219955;
+        }
+        
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        
+        .alert {
+            padding: 15px;
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--accent);
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .note {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: var(--primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .faq-answer {
+            padding: 15px;
+            background-color: white;
+            border-radius: 0 0 5px 5px;
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .subscribe {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .subscribe input {
+            padding: 12px;
+            width: 300px;
+            max-width: 100%;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .print-only {
+            display: none;
+        }
+        
+        @media print {
+            .no-print {
+                display: none;
+            }
+            .print-only {
+                display: block;
+            }
+            body {
+                background: white;
+                color: black;
+                font-size: 12pt;
+            }
+            .card {
+                box-shadow: none;
+                border-left: none;
+                page-break-inside: avoid;
+            }
+            .btn {
+                display: none;
+            }
+            header {
+                background: white !important;
+                color: black !important;
+                text-align: left;
+                padding: 10px 0;
+            }
+            table {
+                page-break-inside: auto;
+            }
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .tagline {
+                font-size: 1rem;
+            }
+            .card {
+                padding: 15px;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IBPS SO (Specialist Officer) Recruitment 2024</h1>
+            <p class="tagline">Institute of Banking Personnel Selection - Apply Now for Specialist Officer Posts</p>
+            <div class="notification-badge">Official Notification Released!</div>
+        </header>
+        
+        <div class="btn-group no-print">
+            <button class="btn" onclick="window.print()">Print This Page</button>
+            <button class="btn btn-secondary" id="savePdfBtn">Save as PDF</button>
+            <a href="#apply" class="btn btn-success">Apply Now</a>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Job Overview</h2>
+            <table>
+                <tr>
+                    <th>Post Name</th>
+                    <td><strong>IBPS SO (Specialist Officer) 2024</strong></td>
+                </tr>
+                <tr>
+                    <th>Conducting Body</th>
+                    <td>Institute of Banking Personnel Selection (IBPS)</td>
+                </tr>
+                <tr>
+                    <th>Vacancies</th>
+                    <td><strong>600+</strong> (Expected, Category-wise breakup will be updated)</td>
+                </tr>
+                <tr>
+                    <th>Job Location</th>
+                    <td>Across India (Participating Banks)</td>
+                </tr>
+                <tr>
+                    <th>Application Mode</th>
+                    <td><strong>Online Only</strong></td>
+                </tr>
+                <tr>
+                    <th>Selection Process</th>
+                    <td>Prelims + Mains + Interview</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Important Dates (Tentative)</h2>
+            <table>
+                <tr>
+                    <th>Event</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>Notification Release</td>
+                    <td><strong>December 2024</strong></td>
+                </tr>
+                <tr>
+                    <td>Online Application Start</td>
+                    <td><strong>December 2024</strong></td>
+                </tr>
+                <tr>
+                    <td>Last Date to Apply</td>
+                    <td><strong>January 2025</strong></td>
+                </tr>
+                <tr>
+                    <td>Prelims Exam</td>
+                    <td><strong>February 2025</strong></td>
+                </tr>
+                <tr>
+                    <td>Mains Exam</td>
+                    <td><strong>March 2025</strong></td>
+                </tr>
+                <tr>
+                    <td>Interview</td>
+                    <td><strong>April-May 2025</strong></td>
+                </tr>
+            </table>
+            <p class="note">Note: Exact dates will be updated after official notification</p>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Vacancy Details (Post-wise)</h2>
+            <table>
+                <tr>
+                    <th>Post Name</th>
+                    <th>Approx Vacancies</th>
+                    <th>Pay Scale</th>
+                </tr>
+                <tr>
+                    <td>IT Officer</td>
+                    <td>120+</td>
+                    <td><strong>₹36,000 – ₹63,840</strong> (JMGS-I)</td>
+                </tr>
+                <tr>
+                    <td>Agricultural Field Officer (AFO)</td>
+                    <td>200+</td>
+                    <td><strong>₹36,000 – ₹63,840</strong></td>
+                </tr>
+                <tr>
+                    <td>Rajbhasha Adhikari (Hindi Officer)</td>
+                    <td>50+</td>
+                    <td><strong>₹36,000 – ₹63,840</strong></td>
+                </tr>
+                <tr>
+                    <td>Law Officer</td>
+                    <td>40+</td>
+                    <td><strong>₹36,000 – ₹63,840</strong></td>
+                </tr>
+                <tr>
+                    <td>HR/Personnel Officer</td>
+                    <td>30+</td>
+                    <td><strong>₹36,000 – ₹63,840</strong></td>
+                </tr>
+                <tr>
+                    <td>Marketing Officer</td>
+                    <td>60+</td>
+                    <td><strong>₹36,000 – ₹63,840</strong></td>
+                </tr>
+            </table>
+            <p class="note">Final vacancies will be updated as per official notification</p>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Eligibility Criteria</h2>
+            
+            <h3>1. Educational Qualification</h3>
+            <table>
+                <tr>
+                    <th>Post</th>
+                    <th>Required Qualification</th>
+                </tr>
+                <tr>
+                    <td><strong>IT Officer</strong></td>
+                    <td>B.E./B.Tech in IT/CS/ECE or MCA/M.Sc (IT)</td>
+                </tr>
+                <tr>
+                    <td><strong>Agriculture Officer (AFO)</strong></td>
+                    <td>Bachelor's Degree in Agriculture</td>
+                </tr>
+                <tr>
+                    <td><strong>Rajbhasha Adhikari</strong></td>
+                    <td>PG in Hindi/Sanskrit with English</td>
+                </tr>
+                <tr>
+                    <td><strong>Law Officer</strong></td>
+                    <td>LLB (3/5 years) + Bar Council Registration</td>
+                </tr>
+                <tr>
+                    <td><strong>HR Officer</strong></td>
+                    <td>MBA/PGDM in HR/Personnel Management</td>
+                </tr>
+                <tr>
+                    <td><strong>Marketing Officer</strong></td>
+                    <td>MBA/PGDM in Marketing</td>
+                </tr>
+            </table>
+            
+            <h3>2. Age Limit (As on 01-01-2025)</h3>
+            <ul>
+                <li><strong>Minimum Age:</strong> 20 Years</li>
+                <li><strong>Maximum Age:</strong> 30 Years</li>
+                <li><strong>Age Relaxation:</strong> SC/ST (+5), OBC (+3), PwD (+10)</li>
+            </ul>
+            
+            <h3>3. Nationality</h3>
+            <ul>
+                <li>Indian Citizen / Nepal/Bhutan/Tibetan Refugee (with eligibility certificate)</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Application Fee</h2>
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Fee</th>
+                </tr>
+                <tr>
+                    <td>General/OBC</td>
+                    <td><strong>₹850</strong></td>
+                </tr>
+                <tr>
+                    <td>SC/ST/PwD</td>
+                    <td><strong>₹175</strong></td>
+                </tr>
+            </table>
+            <p class="note">Payment via Debit/Credit Card/Net Banking/UPI</p>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Selection Process</h2>
+            <ol>
+                <li><strong>Preliminary Exam</strong> (Objective MCQ) – Qualifying in nature.</li>
+                <li><strong>Mains Exam</strong> (Professional Knowledge + Descriptive Test for some posts).</li>
+                <li><strong>Interview</strong> (Final selection based on Mains + Interview marks).</li>
+            </ol>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Exam Pattern</h2>
+            
+            <h3>Prelims Exam (Common for all posts except Rajbhasha Adhikari)</h3>
+            <table>
+                <tr>
+                    <th>Section</th>
+                    <th>Questions</th>
+                    <th>Marks</th>
+                    <th>Duration</th>
+                </tr>
+                <tr>
+                    <td>English</td>
+                    <td>50</td>
+                    <td>25</td>
+                    <td>40 mins</td>
+                </tr>
+                <tr>
+                    <td>Reasoning</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>40 mins</td>
+                </tr>
+                <tr>
+                    <td>General Awareness (Banking)</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>40 mins</td>
+                </tr>
+            </table>
+            <p class="note">Rajbhasha Adhikari has Hindi instead of English</p>
+            
+            <h3>Mains Exam (Professional Knowledge)</h3>
+            <ul>
+                <li><strong>IT Officer, AFO, Law Officer, etc.:</strong> 60 Qs (60 Marks, 45 mins).</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Salary & Benefits</h2>
+            <ul>
+                <li><strong>Basic Pay:</strong> <strong>₹36,000/-</strong> (JMGS-I)</li>
+                <li><strong>Allowances:</strong> DA, HRA, Medical, Pension (NPS), etc.</li>
+                <li><strong>Gross Salary:</strong> <strong>₹65,000 – ₹70,000/month</strong> (approx.)</li>
+            </ul>
+        </div>
+        
+        <div class="card" id="apply">
+            <h2>📌 How to Apply?</h2>
+            <ol>
+                <li>Visit <strong>IBPS Official Website</strong> <a href="https://www.ibps.in" target="_blank">https://www.ibps.in</a>.</li>
+                <li>Click on <strong>"CRP Specialist Officer"</strong> → Register.</li>
+                <li>Fill the form, upload documents (Photo, Signature, ID Proof).</li>
+                <li>Pay fee & submit.</li>
+                <li><strong>Download confirmation PDF</strong> for future reference.</li>
+            </ol>
+            
+            <div class="alert no-print">
+                <strong>Note:</strong> The application link will be activated soon after official notification release.
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Preparation Tips</h2>
+            <ul>
+                <li><strong>Know the Syllabus</strong> – Focus on Professional Knowledge.</li>
+                <li><strong>Solve Previous Papers</strong> – IBPS SO has a technical focus.</li>
+                <li><strong>Mock Tests</strong> – Speed & accuracy matter in Prelims.</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h2>📌 Important Links</h2>
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td><strong>Official Notification</strong></td>
+                    <td><a href="#" class="btn">Download Here</a> (Link active soon)</td>
+                </tr>
+                <tr>
+                    <td><strong>Apply Online</strong></td>
+                    <td><a href="#" class="btn">Click Here</a></td>
+                </tr>
+                <tr>
+                    <td><strong>Syllabus PDF</strong></td>
+                    <td><a href="#" class="btn">Download</a></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h2>❓ FAQs</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q1. Is IBPS SO a permanent job?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">✅ Yes</span>, selected candidates get permanent roles in Public Sector Banks.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q2. Can final-year students apply?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">❌ No</span>, degree completion proof is mandatory before application.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Q3. Is there negative marking?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p><span class="highlight">⚠️ Yes</span>, <strong>0.25 marks deducted</strong> per wrong answer.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subscribe no-print">
+            <h2>📢 Stay Updated!</h2>
+            <p>🔔 <strong>Subscribe for Alerts</strong> – Get exam dates & result updates instantly!</p>
+            <div style="margin-top: 20px;">
+                <input type="email" placeholder="Enter your email address" id="emailInput">
+                <button class="btn" onclick="subscribe()">Subscribe</button>
+            </div>
+        </div>
+        
+        <div class="print-only">
+            <p>For latest updates, visit: www.YourWebsiteName.com/ibps-so</p>
+            <p>Printed on: <span id="printDate"></span></p>
+        </div>
+        
+        <footer>
+            <p>Note: All details are based on previous notifications. Final updates will be provided once IBPS releases the official 2024 notification.</p>
+            <p style="margin-top: 20px;"><strong>🚀 Start Preparing Now!</strong></p>
+            <p>Best Wishes from <strong>GovtJobsHub Team</strong>!</p>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle FAQ answers
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('span:last-child');
+            
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                icon.textContent = '-';
+            }
+        }
+        
+        // Set print date
+        document.getElementById('printDate').textContent = new Date().toLocaleDateString();
+        
+        // Subscribe function
+        function subscribe() {
+            const email = document.getElementById('emailInput').value;
+            if (email && email.includes('@')) {
+                alert('Thank you for subscribing! We will notify you about important updates.');
+                document.getElementById('emailInput').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+        
+        // PDF button functionality (simulated)
+        document.getElementById('savePdfBtn').addEventListener('click', function() {
+            alert('In a real implementation, this would generate a PDF. For now, use the print function and choose "Save as PDF" as your printer.');
+        });
+        
+        // Initialize all FAQ answers as hidden
+        document.addEventListener('DOMContentLoaded', function() {
+            const answers = document.querySelectorAll('.faq-answer');
+            answers.forEach(answer => {
+                answer.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

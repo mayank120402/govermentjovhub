@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>परिणाम - GovtJobsHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1a5276;
+            --secondary: #e74c3c;
+            --light: #f8f9f9;
+            --dark: #17202a;
+            --bg: #f2f3f4;
+            --text: #333;
+            --card-bg: white;
+        }
+        
+        [data-theme="dark"] {
+            --primary: #3498db;
+            --secondary: #e74c3c;
+            --light: #2c3e50;
+            --dark: #ecf0f1;
+            --bg: #1a1a1a;
+            --text: #f8f9f9;
+            --card-bg: #2c3e50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Nirmala UI', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 30px 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        /* Table Styles */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .results-table th {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        
+        .results-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .results-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .results-table tr:hover {
+            background-color: rgba(0,0,0,0.02);
+        }
+        
+        .view-btn {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .view-btn:hover {
+            background-color: var(--dark);
+        }
+        
+        .state-name {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 15px;
+                display: none;
+            }
+            
+            .nav-menu.show {
+                display: flex;
+            }
+            
+            .results-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo">GovtJobsHub</a>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link"><i class="fas fa-home"></i> होम</a>
+                </li>
+                <li class="nav-item">
+                    <a href="results.html" class="nav-link active"><i class="fas fa-poll"></i> परिणाम</a>
+                </li>
+                <li class="nav-item">
+                    <a href="admit-card.html" class="nav-link"><i class="fas fa-id-card"></i> एडमिट कार्ड</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>परिणाम</h1>
+            <p>सभी सरकारी परीक्षाओं के नवीनतम परिणाम</p>
+        </header>
+        
+        <h2>केंद्र सरकारी परीक्षा परिणाम</h2>
+        <table class="results-table" id="centralResults">
+            <thead>
+                <tr>
+                    <th>परीक्षा का नाम</th>
+                    <th>विभाग</th>
+                    <th>परिणाम तिथि</th>
+                    <th>कार्यवाही</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Central government results will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <h2>राज्य सरकारी परीक्षा परिणाम</h2>
+        <table class="results-table" id="stateResults">
+            <thead>
+                <tr>
+                    <th>राज्य</th>
+                    <th>परीक्षा का नाम</th>
+                    <th>परिणाम तिथि</th>
+                    <th>कार्यवाही</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- State government results will be populated by JavaScript -->
+            </tbody>
+        </table>
+        
+        <footer>
+            <p>© <span id="year"></span> GovtJobsHub - सभी अधिकार सुरक्षित</p>
+        </footer>
+    </div>
+
+    <script>
+        // Central Government Results Data
+        const centralResults = [
+            {
+                examName: "SSC CGL 2023",
+                department: "Staff Selection Commission",
+                resultDate: "15 मार्च 2024",
+                link: "ssc-cgl-result.html"
+            },
+            {
+                examName: "SSC CHSL 2023",
+                department: "Staff Selection Commission",
+                resultDate: "10 फरवरी 2024",
+                link: "ssc-chsl-result.html"
+            },
+            {
+                examName: "IBPS PO XII",
+                department: "Institute of Banking Personnel Selection",
+                resultDate: "05 अप्रैल 2024",
+                link: "ibps-po-result.html"
+            },
+            {
+                examName: "SBI Clerk 2023",
+                department: "State Bank of India",
+                resultDate: "20 जनवरी 2024",
+                link: "sbi-clerk-result.html"
+            },
+            {
+                examName: "UPSC Civil Services 2023",
+                department: "Union Public Service Commission",
+                resultDate: "12 मार्च 2024",
+                link: "upsc-cse-result.html"
+            },
+            {
+                examName: "RRB NTPC 2022",
+                department: "रेलवे भर्ती बोर्ड",
+                resultDate: "28 फरवरी 2024",
+                link: "rrb-ntpc-result.html"
+            }
+        ];
+
+        // State Government Results Data
+        const stateResults = [
+            {
+                state: "उत्तर प्रदेश",
+                examName: "UP Police Constable 2023",
+                resultDate: "05 मार्च 2024",
+                link: "up-police-result.html"
+            },
+            {
+                state: "उत्तर प्रदेश",
+                examName: "UPPSC PCS 2023",
+                resultDate: "15 फरवरी 2024",
+                link: "uppsc-pcs-result.html"
+            },
+            {
+                state: "मध्य प्रदेश",
+                examName: "MP Police Constable 2023",
+                resultDate: "10 मार्च 2024",
+                link: "mp-police-result.html"
+            },
+            {
+                state: "महाराष्ट्र",
+                examName: "MAHA TAIT 2023",
+                resultDate: "25 फरवरी 2024",
+                link: "maha-tait-result.html"
+            },
+            {
+                state: "बिहार",
+                examName: "BPSC Teacher 2023",
+                resultDate: "18 मार्च 2024",
+                link: "bihar-teacher-result.html"
+            },
+            {
+                state: "राजस्थान",
+                examName: "Rajasthan PTET 2023",
+                resultDate: "08 मार्च 2024",
+                link: "rajasthan-ptet-result.html"
+            },
+            {
+                state: "पश्चिम बंगाल",
+                examName: "WBPSC Clerkship 2023",
+                resultDate: "12 फरवरी 2024",
+                link: "wb-clerk-result.html"
+            },
+            {
+                state: "तमिलनाडु",
+                examName: "TNPSC Group 4 2023",
+                resultDate: "20 मार्च 2024",
+                link: "tnpsc-group4-result.html"
+            },
+            {
+                state: "गुजरात",
+                examName: "GPSC Class 1-2 2023",
+                resultDate: "05 अप्रैल 2024",
+                link: "gpsc-result.html"
+            },
+            {
+                state: "कर्नाटक",
+                examName: "Karnataka PSC 2023",
+                resultDate: "15 मार्च 2024",
+                link: "kpsc-result.html"
+            }
+        ];
+
+        // Function to populate central results table
+        function populateCentralResults() {
+            const tbody = document.querySelector('#centralResults tbody');
+            tbody.innerHTML = '';
+            
+            centralResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${result.examName}</td>
+                    <td>${result.department}</td>
+                    <td>${result.resultDate}</td>
+                    <td><a href="${result.link}" class="view-btn">परिणाम देखें</a></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Function to populate state results table
+        function populateStateResults() {
+            const tbody = document.querySelector('#stateResults tbody');
+            tbody.innerHTML = '';
+            
+            stateResults.forEach(result => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="state-name">${result.state}</td>
+                    <td>${result.examName}</td>
+                    <td>${result.resultDate}</td>
+                    <td><a href="${result.link}" class="view-btn">परिणाम देखें</a></td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            populateCentralResults();
+            populateStateResults();
+        });
+    </script>
+</body>
+</html>
